@@ -86,15 +86,9 @@ func check_all_roman_nums(operation string) bool {
 }
 
 func remove_symbols(str string) string {
-	// Define a regular expression pattern to match symbols other than "+", "-", "*", "/"
 	pattern := "[^+\\-*/]"
-
-	// Create a regular expression object
 	reg := regexp.MustCompile(pattern)
-
-	// Remove symbols using the regular expression
 	result := reg.ReplaceAllString(str, "")
-
 	return result
 }
 
@@ -170,9 +164,8 @@ func main() {
 	for {
 		fmt.Println("Enter the operation to calculate: ")
 
-		text, _ := reader.ReadString('\n') // Waiting for data in String format
-		// text := "1 + 1"
-		clear_text := strings.TrimSpace(text) // Clearing the string (removing whitespaces/tabs)
+		text, _ := reader.ReadString('\n')
+		clear_text := strings.TrimSpace(text)
 		operation := strings.ReplaceAll(clear_text, " ", "")
 
 		if operation == "stop" {
